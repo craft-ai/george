@@ -33,7 +33,8 @@ app.get('/', function(req, res) {
   res.send('<div><h1>George the dentalist welcomes you!</h1><iframe src="//giphy.com/embed/2nzUAOGw3i7w4?html5=true" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/french-movie-michel-hazanavicius-2nzUAOGw3i7w4"></a></p></div>');
 });
 
-app.get('/sms_webhook', function(req, res) {
+app.post('/sms_webhook', function(req, res) {
+  console.log('req.body.data.text', req.body.data.text);
   api.call('sms.send', '', process.env.TEL_NUMBER, 'Envoie moi un fax !!', { flash_message: false }).success(function(data) {
     // success callback
     console.log('Response:', data);
