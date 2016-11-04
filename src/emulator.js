@@ -1,4 +1,9 @@
+require('dotenv').load();
+
 let readline = require('readline');
+let bot = require('./bot');
+
+const CONVERSATION_TOKEN = Math.floor((Math.random() * 1000) + 1).toString()
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -7,18 +12,26 @@ const rl = readline.createInterface({
 
 process.stdin.setEncoding('utf8')
 
-const CONVERSATION_ID = Math.floor((Math.random() * 1000) + 1).toString()
-
-console.log()
-process.stdout.write('> ')
+function printPrompt() {
+  console.log();
+  process.stdout.write('> ');
+}
 
 rl.on('SIGINT', () => { 
   rl.close()
 })
 
+printPrompt();
+
 rl.on('line', input => {
   console.log()
-  console.log(input)
-  console.log()
-  process.stdout.write('> ');
+  bot(CONVERSATION_TOKEN)(input)
+  .then(res => {
+    console.log(res);
+    printPrompt();
+  })
+  .catch(err => {
+    console.log(err);
+    printPrompt();
+  });
 })
