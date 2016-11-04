@@ -1,0 +1,20 @@
+{
+  "name": "hackathon_air_liquide",
+  "version": "0.0.1",
+  "description": "hackathon air liquide sparkcx",
+  "private": true,
+  "author": {
+    "name": "craft ai",
+    "email": "contact@craft.ai",
+    "url": "http://craft.ai/"
+  },
+  "scripts": {
+    "start": "node ./src/main.js"
+  },
+  "dependencies": {
+    "callr": "1.0.0",
+    "express": "^4.14.0",
+    "lodash": "4.13.1",
+    "recastai": "^2.3.0"
+  }
+}
