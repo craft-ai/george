@@ -1,0 +1,33 @@
+{
+  "name": "george-the-bot-that-knows-you",
+  "version": "0.0.1",
+  "description": "George, the bot that knows you",
+  "private": true,
+  "author": {
+    "name": "craft ai",
+    "email": "contact@craft.ai",
+    "url": "http://craft.ai/"
+  },
+  "scripts": {
+    "start": "node ./src/main.js",
+    "learn": "node ./src/learn.js",
+    "emulator": "node ./src/emulator.js"
+  },
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "callr": "1.0.0",
+    "craft-ai": "0.1.16",
+    "dotenv": "2.0.0",
+    "express": "4.14.0",
+    "express-handlebars": "3.0.0",
+    "handlebars": "4.0.5",
+    "highland": "2.10.1",
+    "lodash": "4.13.1",
+    "moment-timezone": "0.5.7",
+    "recastai": "2.3.0",
+    "seedrandom": "2.4.2"
+  },
+  "engines": {
+    "node": "6.9.1"
+  }
+}
